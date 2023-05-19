@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>grading score</title>
+    <style>
+      .logo{
+       color: rgb(43, 55, 226);
+       font-weight: bold;
+       font-size: 2em;
+       margin-left: 2rem;
+       margin-top: 3rem;
+      }
+      .logo2{
+        color: black;
+        border: 2rem;
+       
+      }
+      .collection{
+             margin-left: 20rem;
+             font-size: 1.3rem;
+             border-color:blue;
+             border-radius: 0.9rem;
+             border: solid;
+             border-style: outset;
+             padding: 4rem;
+      }
+      input[type=number] {
+              border: 2rem;
+               border: solid;
+               border-radius: 2rem;
+               padding: 1rem;
+               border-style: outset;
+               width: 50%;
+               margin-left: 3rem;
+            }
+          
+            .submitbtn{
+                   margin-left: 25rem;
+                   padding: 0.8rem;
+                   border-radius: 1rem;
+                   background-color: rgba(22, 96, 233, 0.89);
+                   color: white;
+                   border-style: none;
+                   
+            }
+            :hover.submitbtn{
+              background-color: rgb(238, 155, 54);
+              transition: ease-in-out all 0.2s;
+              transform: scale(1.1);
+            }
+            .outputForgrade{
+               border: 2rem;
+               border: solid;
+               border-radius: 2rem;
+               padding: 1rem;
+               border-style: outset;
+               width: 50%;
+               margin-left: 10rem;
+
+            }
+            .outputForcoment{
+              border: 2rem;
+               border: solid;
+               border-radius: 2rem;
+               padding: 1rem;
+               border-style: outset;
+               width: 50%;
+               margin-left: 10rem;
+               color: rgb(16, 207, 16);
+            }
+    </style>
+  </head>
+  <body>
+     <p class="logo">HeyJay<span class="logo2">Grading</span></p>
+     <div class="collection">
+              <label for="Exam Score" >Exam score:</label>
+              <input type="number" id="scoreCollection" class="scoreCollection" placeholder="Exam Score" onkeydown=" handlekeydown(event)
+              ">
+              <br>
+              <br>
+              <br>
+              
+             <p class="outputForgrade">Grade:</p>
+             <br>
+             
+              <P class="outputForcoment" >Comment:</P>
+              <button class="submitbtn"  type="button" id="btn1" onclick="
+             getvalueF()">Submit</button>
+
+     </div>
+      <script>
+        function getvalueF(){
+          const inputeElement = document.querySelector('.scoreCollection')
+          let exanScore = Number(inputeElement.value)
+          if (exanScore>=70 && exanScore <= 100){
+            document.querySelector('.outputForgrade').innerHTML="A"
+            document.querySelector('.outputForcoment').innerHTML=" Passed,You did wondefully well keep it up"
+
+          }
+          else if (exanScore>=60 && exanScore <=70){
+            document.querySelector('.outputForgrade').innerHTML="B"
+            document.querySelector('.outputForcoment').innerHTML=" Passed,You did wondefully well gp harder next time "
+
+          }
+          else if (exanScore>=50 && exanScore <=59){
+            document.querySelector('.outputForgrade').innerHTML="C"
+            document.querySelector('.outputForcoment').innerHTML="Passed,You did wondefully put more effort"
+
+          }
+          else if (exanScore>=40 && exanScore <=49){
+            document.querySelector('.outputForgrade').innerHTML="D"
+            document.querySelector('.outputForcoment').innerHTML="Passed,Do more next time"
+
+          }
+          else if (exanScore>=30 && exanScore<=39){
+            document.querySelector('.outputForgrade').innerHTML="E"
+            document.querySelector('.outputForcoment').innerHTML="Passed, try harder"
+
+          }
+          else if (exanScore>=0 && exanScore<=30){
+            document.querySelector('.outputForgrade').innerHTML="F"
+            document.querySelector('.outputForcoment').innerHTML="Failed, you will repeat this course "
+
+          }
+         
+        }
+        function handlekeydown(event){
+          (event.key)
+              if (event.key ==='Enter'){getvalueF()
+ 
+              }
+        }
+       
+       
+
+    </script>
+  </body>
+</html>
